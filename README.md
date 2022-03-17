@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+1. layout
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+​                     App
 
-## Available Scripts
+header      main        Footer
 
-In the project directory, you can run:
+​		setting     list         map
 
-### `npm start`
+2. data communication
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+在哪几个components之间通信
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+setting: lat,long, ele, att, time
 
-### `npm test`
+list:  lat, long
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+map: position: lat, long, time
 
-### `npm run build`
+他们是sibling关系
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+谁给后端发送请求？main
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+setting向main发送数据，main向后端发送请求，把数据传给list和map
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+父相子绝
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+高阶函数 Higher Ordered Function
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+How to use function
 
-### Code Splitting
+1. passing a function as parameter: cb
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. return a function
 
-### Analyzing the Bundle Size
+高阶函数：是一个函数；参数是一个函数或者返回一个函数。好处：更灵活，易于拓展，更动态。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+定时器，foreach, promise
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+高阶组件：Higher Ordered Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+React的设计思想。
 
-### Deployment
+1. 本质是一个函数。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. 函数接收一个组件，返回一个新组件。
 
-### `npm run build` fails to minify
+```js
+const SatSetting = Form.create({name: 'satellite-setting'})(SatSettingForm)
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Form.create({name: 'satellite-setting'})是一个高阶组件。
