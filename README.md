@@ -44,7 +44,7 @@ How to use function
 
 
 
-高阶组件：Higher Ordered Component
+高阶组件：Higher Ordered Component（HOC）
 
 React的设计思想。
 
@@ -57,3 +57,37 @@ const SatSetting = Form.create({name: 'satellite-setting'})(SatSettingForm)
 ```
 
 Form.create({name: 'satellite-setting'})是一个高阶组件。
+
+
+
+
+
+text/babel
+
+HOC
+
+组件有太多duplicate代码。
+
+
+
+d3
+
+原生JS
+
+react simple maps
+
+
+
+
+
+怎么画一个map
+
+1. map data: topjson- client 地图数据的处理
+
+2. real map -> page map projection: d3
+
+d3-geo 
+
+d3-projection
+
+d3-selection 选择地图
