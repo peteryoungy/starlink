@@ -6,7 +6,7 @@ import { geoGraticule, geoPath } from 'd3-geo';
 import { select as d3Select } from 'd3-selection';
 import {Spin} from "antd";
 
-import { WORLD_MAP_URL, SATELLITE_POSITION_URL, SAT_API_KEY} from "../constants";
+import { WORLD_MAP_URL, SATELLITE_POSITION_URL} from "../constants";
 
 import { schemeCategory10 } from "d3-scale-chromatic";
 import * as d3Scale from "d3-scale";
@@ -134,7 +134,7 @@ class WorldMap extends Component {
             // note: array => array
             const urls = this.props.satData.map(sat => {
                 const {satid} = sat;
-                const url = `/api/${SATELLITE_POSITION_URL}/${satid}/${latitude}/${longitude}/${elevation}/${endTime}/&apiKey=${SAT_API_KEY}`;
+                const url = `/api/${SATELLITE_POSITION_URL}/${satid}/${latitude}/${longitude}/${elevation}/${endTime}/&apiKey=${process.env["REACT_APP_API_KEY"]}`;
                 return axios.get(url)
             })
 

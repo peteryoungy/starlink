@@ -1,4 +1,3 @@
-export const SAT_API_KEY = "7926WE-YJ7EH4-6Z5MRR-4URP";
 
 export const STARLINK_CATEGORY = "52";
 

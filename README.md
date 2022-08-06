@@ -1,118 +1,53 @@
-1. layout
+# Starlink Trajectory Visualization
 
-​                     App
+## Introduction
 
-header      main        Footer
+This project is a visualization dashboard using React and D3.JS to track starlink satellites in real-time based on geo-location.
 
-​		setting     list         map
+## How to Start
 
-2. data communication
+```bash
+# Clone this repository
+$ git clone https://github.com/peteryoungy/starlink.git
 
-在哪几个components之间通信
+# Go into the repository
+$ cd starlink
 
-setting: lat,long, ele, att, time
+# Install dependencies
+$ npm install
 
-list:  lat, long
-
-map: position: lat, long, time
-
-他们是sibling关系
-
-谁给后端发送请求？main
-
-setting向main发送数据，main向后端发送请求，把数据传给list和map
-
-
-
-
-
-父相子绝
-
-
-
-高阶函数 Higher Ordered Function
-
-How to use function
-
-1. passing a function as parameter: cb
-
-2. return a function
-
-高阶函数：是一个函数；参数是一个函数或者返回一个函数。好处：更灵活，易于拓展，更动态。
-
-定时器，foreach, promise
-
-
-
-高阶组件：Higher Ordered Component（HOC）
-
-React的设计思想。
-
-1. 本质是一个函数。
-
-2. 函数接收一个组件，返回一个新组件。
-
-```js
-const SatSetting = Form.create({name: 'satellite-setting'})(SatSettingForm)
+# Run the app
+$ npm start
 ```
 
-Form.create({name: 'satellite-setting'})是一个高阶组件。
+## How to track a satellite
 
+**Visit this [website](http://3.17.176.29:3000) for a demo.**
 
+1. Enter Longitude, Latitude, Elevation, Altitude, Duration in the setting form, then click "Find Nearby Satellite" button. (Example parameters: 90, 41, 112, 89, 10)
 
+   <p align='left'>
+   	<img src='./README.assets/image-20220806014918897.png' width=45%>    
+   </p>
 
+2. From the satellites showed below, select the ones you are willing to track, then click "Track on the map" button.
 
-text/babel
+   <p align='left'>
+   	<img src='./README.assets/image-20220806013049935.png' width=45%>    
+   </p>
 
-HOC
+3. The trajectory of the selected satellites will be shown in the world map, with a real-time time stamp on top of it.
 
-组件有太多duplicate代码。
+<p align='left'>
+	<img src='./README.assets/demo.gif' width=80%>    
+</p>
 
+## API Support
 
+Register on N2YO : [n2yo.com/login/register](https://www.n2yo.com/login/register/)  After login, please visit the profile page [n2yo.com/login/edit](https://www.n2yo.com/login/edit) and scroll down to access the button that generates the API key.
 
-d3
+Click here to check the [API document](n2yo.com/api/) the website offers.
 
-原生JS
+### Contact
 
-react simple maps
-
-
-
-
-
-怎么画一个map
-
-1. map data: topjson- client 地图数据的处理
-
-2. real map -> page map projection: d3
-
-d3-geo 
-
-d3-projection
-
-d3-selection 选择地图
-
-
-
-
-
-```
-export const a = 
-```
-
-
-
-在DidUpdate里面update会导致死循环，需要加条件控制
-
-axios concurrency request
-
-
-
-```
-hasOwnProperty() 本身不存在property， 原型链
-```
-
-原地图上打点 vs 新地图上打点
-
-避免打点的闪动效果
-
+Yang Yu @[peteryoungy](https://github.com/peteryoungy)

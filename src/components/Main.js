@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Row, Col } from 'antd';
 import SatSetting from "./SatSetting";
 import SatelliteList from "./SatelliteList";
-import {NEARBY_SATELLITE, STARLINK_CATEGORY, SAT_API_KEY} from "../constants";
+import {NEARBY_SATELLITE, STARLINK_CATEGORY} from "../constants";
 import axios from "axios";
 import WorldMap from "./WorldMap";
 
@@ -16,7 +16,6 @@ class Main extends Component {
             setting: null
         };
     }
-
 
     showNearbySatellite = (setting) => {
         // console.log(setting);
@@ -33,10 +32,8 @@ class Main extends Component {
 
         // api config
         const {latitude, longitude, elevation, altitude} = setting;
-        const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${SAT_API_KEY}`;
+        const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${process.env["REACT_APP_API_KEY"]}`;
         
-        // const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${SAT_API_KEY}`;
-
         this.setState({
             isLoadingList: true
         });
