@@ -10,11 +10,11 @@ class SatSettingForm extends Component {
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },
-                sm: { span: 11 },
+                sm: { span: 8 },
             },
             wrapperCol: {
                 xs: { span: 24 },
-                sm: { span: 13 },
+                sm: { span: 16 },
             },
         };
 

@@ -19,7 +19,7 @@ class Main extends Component {
 
 
     showNearbySatellite = (setting) => {
-        console.log(setting);
+        // console.log(setting);
         this.setState({
             isLoadingList: true,
             setting: setting
@@ -34,10 +34,14 @@ class Main extends Component {
         // api config
         const {latitude, longitude, elevation, altitude} = setting;
         const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${SAT_API_KEY}`;
+        
+        // const url = `/api/${NEARBY_SATELLITE}/${latitude}/${longitude}/${elevation}/${altitude}/${STARLINK_CATEGORY}/&apiKey=${SAT_API_KEY}`;
 
         this.setState({
             isLoadingList: true
         });
+
+
 
         axios.get(url)
             .then(response => {
@@ -59,7 +63,9 @@ class Main extends Component {
         console.log('show on the map');
 
         // note: generate a new array, not the reference
-        this.setState({satList: {...selected}})
+        this.setState({
+            satList: [...selected]
+        })
     }
 
 

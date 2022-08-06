@@ -91,3 +91,28 @@ d3-geo
 d3-projection
 
 d3-selection 选择地图
+
+
+
+
+
+```
+export const a = 
+```
+
+
+
+在DidUpdate里面update会导致死循环，需要加条件控制
+
+axios concurrency request
+
+
+
+```
+hasOwnProperty() 本身不存在property， 原型链
+```
+
+原地图上打点 vs 新地图上打点
+
+避免打点的闪动效果
+
